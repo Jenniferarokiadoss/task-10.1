@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  my-service:
+    image: jarokiadoss/week3ws:myimage
+    ports:
+      - "8080:80"
+    networks:
+      - m-network
+  my-other-service:
+    image: jarokiadoss/week3ws:myimage
+    ports:
+      - "8081:80"
+    networks:
+      - m-network
+
+networks:
+  m-network:
+    driver: bridge
